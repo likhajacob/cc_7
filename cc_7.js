@@ -66,4 +66,18 @@ console.log(`Total Interest: $${interest2.toFixed(2)}`);
 const transactions = [500, 1200, 2500, 800, 1500, 300] // Transactions 
 const highValueTransactions = transactions.filter(amount => amount > 1000); // Function to filter transactions over 1000
 console.log(highValueTransactions);
+// Task 7 Budget Tracker 
+const createBudgetTracker = () => {
+    let balance = 0;
+
+    return (expense) => {
+        balance += expense; 
+        console.log(`Current Balance: $${balance.toFixed(2)}`);
+    };
+};
+
+// Test Data 
+let budget = createBudgetTracker();
+budget(300); // Expected output: "Current Balance: -$300"
+budget(200); // Expected output: "Current Balance: -$500"
 

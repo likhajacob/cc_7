@@ -47,7 +47,7 @@ function calculateShippingCost(weight, location, expedited = false) {
 
 console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true)}`)//Output: Shipping Cost $20
 console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false)}`)// Output: Shipping Cost $13.5
-/ Task 5 Business Loan Interest Calculation 
+// Task 5 Business Loan Interest Calculation 
 
 const calculateLoanInterest = (principal, rate, years) => {
     let interest = principal * rate * years;
@@ -62,4 +62,8 @@ console.log(`Total Interest: $${interest1.toFixed(2)}`);
 
 let interest2 = calculateLoanInterest(5000, 0.07, 5);
 console.log(`Total Interest: $${interest2.toFixed(2)}`);
+// Task 6 Filtering from High-Value Transactions 
+const transactions = [500, 1200, 2500, 800, 1500, 300] // Transactions 
+const highValueTransactions = transactions.filter(amount => amount > 1000); // Function to filter transactions over 1000
+console.log(highValueTransactions);
 

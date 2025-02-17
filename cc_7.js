@@ -80,4 +80,19 @@ const createBudgetTracker = () => {
 let budget = createBudgetTracker();
 budget(300); // Expected output: "Current Balance: -$300"
 budget(200); // Expected output: "Current Balance: -$500"
+// Task 8 Business Groth Projection 
+const calculateGrowth = (years, revenue) => {
+    if (years >= 10) {
+        console.log(`Projected Revenue after ${years} years: $${revenue.toFixed(2)}`);
+        return revenue;
+    }
+    // Increase revenue by 5% and call function again 
+    revenue *= 1.05;
+    return calculateGrowth(years + 1, revenue);
+}; 
 
+let initialRevenue = 1000;
+
+// Test Cases 
+calculateGrowth(8, 1000); // Expected output: "Projected Revenue: $1102.50"
+calculateGrowth(5, 5000); // Expected output: "Projected Revenue: $6381.41"
